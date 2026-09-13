@@ -74,6 +74,14 @@ Voraussetzungen: Python 3.8+ und PyQt5 oder PySide6.
 
 ```bash
 # Repository klonen
+cd 4_in_a_Row
+
+# Abhängigkeiten installieren
+pip install PyQt5 zstandard
+
+# Spiel starten
+
+# Repository klonen
 git clone [https://github.com/DeinUsername/4_in_a_Row.git](https://github.com/DeinUsername/4_in_a_Row.git)
 cd 4_in_a_Row
 
@@ -81,6 +89,10 @@ cd 4_in_a_Row
 pip install PyQt5 zstandard
 
 # Spiel starten
+
+python 4_in_a_Row.py
+
+<img width="616" height="767" alt="Screenshot 2026-09-13 210822" src="https://github.com/user-attachments/assets/62aba1da-e980-4e2c-b856-ca71b504fc7e" />
 
 python 4_in_a_Row.py
 
