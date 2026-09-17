@@ -67,3 +67,36 @@ The AI engine utilizes modern chess-engine algorithms for strong gameplay and fa
 * **Pattern Window Evaluation** for detecting split-threat combinations
 
 ---
+<img width="616" height="767" alt="Screenshot 2026-09-13 210822" src="https://github.com/user-attachments/assets/f02c0652-33bf-4a2b-92b8-6c5617231e7f" />
+
+
+## 🌍 Adding New Languages
+
+To add a new language, open `4_in_a_Row.py` and add a dictionary entry to `LANG`. The menu entry will appear automatically:
+
+```python
+"Svenska": {
+    "flag":             "🇸🇪",
+    "title":            "4 i rad – Bitboard + PVS",
+    "menu_mode":        "Läge",
+    "menu_diff":        "Svårighetsgrad",
+    "menu_lang":        "Språk",
+    "menu_new":         "Nytt spel",
+    "menu_undo":        "Ångra (Ctrl+Z)",
+    "mode_hvh":         "Människa vs. Människa",
+    "mode_hvc":         "Människa vs. Dator",
+    "diff_easy":        "Lätt",
+    "diff_hard":        "Svår",
+    "diff_exp":         "Expert",
+    "status_your_turn": "Din tur (Röd)",
+    "status_p1":        "Spelare 1 (Röd) spelar",
+    "status_p2":        "Spelare 2 (Grön) spelar",
+    "status_ai":        "Datorn tänker…",
+    "win_p1":           "Spelare 1 (Röd) vinner!",
+    "win_p2":           "Spelare 2 (Grön) vinner!",
+    "win_you":          "Du vinner!",
+    "win_ai":           "Datorn vinner!",
+    "draw":             "Oavgjort!",
+    "dlg_title":        "Spelet slut",
+    "dlg_question":     "Spela igen?",
+}
