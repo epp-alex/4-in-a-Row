@@ -5,95 +5,66 @@
 ![Compiler](https://img.shields.io/badge/Compiler-Nuitka-ff69b4)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-Ein performantes **Vier-Gewinnt-Spiel** (10×10 Spielfeld, 4 gewinnt) entwickelt in Python und mit **Nuitka** zu autarken, nativen Anwendungen kompiliert.
+A highly optimized **Connect Four-style puzzle game** (10×10 grid, 4 in a row to win) built with Python and compiled into standalone, native executables using **Nuitka**.
 
-Das Spiel besitzt eine extrem starke KI-Engine basierend auf **Principal Variation Search (PVS)** mit Iterative Deepening, Bitboard-Evaluierung und Killer-Move-Heuristiken.
+Features a powerful AI engine powered by **Principal Variation Search (PVS)** with iterative deepening, bitboard evaluation, and killer-move heuristics.
 
 ---
 
-## 📥 Downloads (Standalone Executables)
+## 📥 Download & Run (No Python Needed)
 
-Keine Python-Installation erforderlich! Lade einfach das Paket für dein Betriebssystem im **[Releases-Bereich](../../releases)** herunter:
+No installation required! Simply download the package for your platform from the **[Releases](../../releases)** section:
 
-| Plattform | Release-Archiv | Inhalt & Anleitung |
+| Platform | File / Archive | Instructions |
 | :--- | :--- | :--- |
-| 🪟 **Windows** | `4_in_a_Row.7z` | Archiventpacken & `4_in_a_Row.exe` per Doppelklick starten. |
-| 🍎 **macOS** | `4_in_a_Row.dmg` | Disk Image öffnen & `4_in_a_Row.app` in den Programme-Ordner ziehen. |
-| 🐧 **Linux** | `4_in_a_Row.tar.gz` | Entpacken & ausführen:<br>`tar -xzf 4_in_a_Row.tar.gz`<br>`chmod +x 4_in_a_Row && ./4_in_a_Row` |
+| 🪟 **Windows** | `4_in_a_Row.7z` | Extract the archive and double-click `4_in_a_Row.exe` to run. |
+| 🍎 **macOS** | `4_in_a_Row.dmg` | Open the `.dmg` image and drag `4_in_a_Row.app` to your Applications folder *(Right-click → Open if prompted by Gatekeeper)*. |
+| 🐧 **Linux** | `4_in_a_Row.tar.gz` | Extract and execute via terminal:<br>`tar -xzf 4_in_a_Row.tar.gz`<br>`chmod +x 4_in_a_Row && ./4_in_a_Row` |
 
-> **Linux Note:** Die Binary enthält alle nötigen `xcb`-Systembibliotheken (`libxcb-cursor.so.0`) und läuft ohne zusätzliche Abhängigkeiten direkt out-of-the-box!
+> **Linux Note:** Thanks to embedded `libxcb-cursor` libraries, the Linux binary runs instantly out-of-the-box on modern distributions without installing system dependencies!
 
 ---
 
-## 🎮 Spielanleitung & Steuerung
+## 🎮 How to Play & Controls
 
-* **Spielen:** Klicke auf den **↓** Pfeil über einer Spalte, um deinen Spielstein (🔴 Rot) einzuwerfen.
-* **Ziel:** Bringe **4 Steine in eine Reihe** – horizontal, vertikal oder diagonal.
-* **Hervorhebung:** Die gewinnenden Steine werden am Ende **gold markiert**.
+* **Gameplay:** Click the **↓** arrow button above a column to drop your piece (🔴 Red).
+* **Objective:** Connect **4 pieces in a row**—horizontally, vertically, or diagonally.
+* **Victory:** The winning sequence is **highlighted in gold** when the game ends.
 
-| Tastenkürzel / Menü | Funktion |
+| Action / Shortcut | Function |
 | :--- | :--- |
-| `Strg + Z` | **Rückgängig:** Nimmt deinen letzten Zug und die Antwort der KI gleichzeitig zurück. |
-| `Menü → Neues Spiel` | Startet ein neues Match mit den aktuellen Einstellungen. |
-| `Menü → Sprache` | Welchsle nahtlos zwischen 14 Sprachen im laufenden Spiel. |
+| `Click ↓ Button` | Drop piece into the selected column |
+| `Ctrl + Z` / `Menu → Undo` | **Undo Move:** Takes back your move and the AI's response simultaneously |
+| `Menu → New Game` | Start a fresh game with current settings |
+| `Menu → Language` | Switch seamlessly between 14 supported languages on the fly |
 
 ---
 
-## ✨ Highlights & Features
+## ✨ Key Features
 
-* **10×10 Grid:** Großes Spielfeld für tiefere taktische Möglichkeiten als das klassische 7×6.
-* **3 KI-Schwierigkeiten:** Von Anfänger-freundlich bis extrem stark.
-* **2-Spieler-Modus:** Lokales Match gegen einen Freund (Mensch vs. Mensch).
-* **Persistente Einstellungen:** Sprache, Schwierigkeit und Spielmodus werden automatisch im System-Konfigurationspfad gespeichert.
-* **14 Sprachen:** 🇩🇪 🇬🇧 🇫🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇱 🇵🇹 🇷🇺 🇺🇦 🇬🇷 🇭🇺 🇹🇷 🇨🇿
+* **10×10 Board:** Expanded grid offering deeper tactical gameplay than the classic 7×6 board.
+* **3 AI Difficulty Levels:** Tailored search depth and thinking time for all player skill levels.
+* **Player vs. Player:** Play locally with a friend on the same computer (Human vs. Human mode).
+* **Persistent Settings:** Language, difficulty, and game mode are automatically saved across sessions.
+* **14 Built-in Languages:** 🇩🇪 🇬🇧 🇫🇷 🇪🇸 🇮🇹 🇳🇱 🇵🇱 🇵🇹 🇷🇺 🇺🇦 🇬🇷 🇭🇺 🇹🇷 🇨🇿
 
 ---
 
-## 🤖 KI-Engine & Bitboard Architecture
+## 🤖 AI Engine & Performance
 
-Die KI verwendet moderne Engine-Techniken für maximale Spielstärke bei minimaler Bedenkzeit:
+The AI engine utilizes modern chess-engine algorithms for strong gameplay and fast decision-making:
 
-| Level | Suchtiefe | Bedenkzeit | Spielstärke |
+| Level | Search Depth | Thinking Time | Engine Behavior |
 | :--- | :--- | :--- | :--- |
-| **Einfach** | Depth 6 | ~1.0s | Gelegentliche strategische Fehler |
-| **Schwer** | Depth 12 | ~2.5s | Sehr solide, übersieht fast keine Drohungen |
-| **Experte** | Depth 16 | ~5.0s | Erkennt komplexe Muster inklusive Lücken-Fallen (`x_xx`) |
+| **Easy** | Depth 6 | ~1.0 s | Casual play, makes occasional strategic mistakes |
+| **Hard** | Depth 12 | ~2.5 s | Solid play, rarely misses immediate threats |
+| **Expert** | Depth 16 | ~5.0 s | Master level, detects complex gap traps like `x_xx` |
 
-### Technische Details:
-* **Principal Variation Search (PVS)** mit Iterative Deepening
-* **Transposition Table (TT)** mit Exact/Lower/Upper-Bound Flags
-* **Killer-Move Heuristic** für starkes Alpha-Beta-Pruning
-* Exakte **Bitboard-Gewinnerkennung** mit Zeilen-Boundary-Masken
-* **Pattern-Window-Evaluation** zur Erkennung verdeckter Drohungen
+### Technical Engine Architecture:
+* **Principal Variation Search (PVS)** with Iterative Deepening
+* **Transposition Table (TT)** with exact/lower/upper bound flags
+* **Killer-Move Heuristic** for enhanced Alpha-Beta pruning efficiency
+* Exact **Bitboard Win Detection** using row-boundary masking
+* **Pattern Window Evaluation** for detecting split-threat combinations
 
 ---
-
-## 🛠️ Aus dem Quellcode ausführen (Developer)
-
-Voraussetzungen: Python 3.8+ und PyQt5 oder PySide6.
-
-```bash
-# Repository klonen
-cd 4_in_a_Row
-
-# Abhängigkeiten installieren
-pip install PyQt5 zstandard
-
-# Spiel starten
-
-# Repository klonen
-git clone [https://github.com/DeinUsername/4_in_a_Row.git](https://github.com/DeinUsername/4_in_a_Row.git)
-cd 4_in_a_Row
-
-# Abhängigkeiten installieren
-pip install PyQt5 zstandard
-
-# Spiel starten
-
-python 4_in_a_Row.py
-
-<img width="616" height="767" alt="Screenshot 2026-09-13 210822" src="https://github.com/user-attachments/assets/62aba1da-e980-4e2c-b856-ca71b504fc7e" />
-
-python 4_in_a_Row.py
-
-<img width="616" height="767" alt="Screenshot 2026-09-13 210822" src="https://github.com/user-attachments/assets/62aba1da-e980-4e2c-b856-ca71b504fc7e" />
