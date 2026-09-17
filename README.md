@@ -1,13 +1,14 @@
-🔴 4 in a Row – Bitboard + PVS
+# 🔴 4 in a Row – Bitboard + PVS
 
-Python
-Qt
-Compiler
-License
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
+![Qt](https://img.shields.io/badge/GUI-PyQt5%20%7C%20PySide6-green?logo=qt)
+![Compiler](https://img.shields.io/badge/Compiler-Nuitka-ff69b4)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-A highly optimized Connect Four-style puzzle game (10×10 grid, 4 in a row to win) built with Python and compiled into standalone, native executables using Nuitka.
+A highly optimized **Connect Four-style puzzle game** (10×10 grid, 4 in a row to win) built with Python and compiled into standalone, native executables using **Nuitka**.
 
-Features a powerful AI engine powered by Principal Variation Search (PVS) with iterative deepening, bitboard evaluation, and killer-move heuristics.
+Features a powerful AI engine powered by **Principal Variation Search (PVS)** with iterative deepening, bitboard evaluation, and killer-move heuristics.
+
 
 ## 📥 Download & Run (No Python Needed)
 
